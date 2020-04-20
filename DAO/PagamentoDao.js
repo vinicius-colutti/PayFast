@@ -9,6 +9,7 @@ PagamentoDao.prototype.salva = function(pagamento,callback) {
 
         this._connection.query(stmt, todo,
             function(err, result) {
+                console.log(err);
                 let id = result.insertId;
                 let resultado = {"id_payment": id, "status": "PENDING"};
                 res.send(resultado);
